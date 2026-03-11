@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://biwxcbdms640v"]
+
+[ext_resource type="PackedScene" uid="uid://du8n473tknlxu" path="res://GameUtilities/game_utilities.tscn" id="1_o78mv"]
+[ext_resource type="AudioStream" uid="uid://btoyu2h6qefm7" path="res://Minigames/PirateFall/OST/A_Crew_Shanty.mp3" id="2_o78mv"]
+[ext_resource type="Script" uid="uid://rqw6qwch5svh" path="res://Minigames/PirateFall/pirate_fall.gd" id="2_wvcol"]
+
+[node name="pirate_fall" instance=ExtResource("1_o78mv")]
+script = ExtResource("2_wvcol")
+regle = null
+jeu = null
+fin = null
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="1"]
+stream = ExtResource("2_o78mv")
+autoplay = true

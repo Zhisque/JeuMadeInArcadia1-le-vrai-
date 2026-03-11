@@ -109,5 +109,7 @@ func MinigameResults(result) -> void:
 		p1_victory += 1
 	else:
 		p2_victory += 1
+	print("Joueur 1 : ",p1_victory," / Joueur 2 : ",p2_victory)
+	print()
 		
 	next(true)
