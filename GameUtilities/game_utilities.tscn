@@ -108,7 +108,7 @@ _data = {
 &"décompte": SubResource("Animation_qsawx")
 }
 
-[node name="GameUtilities" type="Node"]
+[node name="[NomDeVotreJeu]" type="Node"]
 script = ExtResource("1_foxqv")
 
 [node name="Utilities" type="Node" parent="."]

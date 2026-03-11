@@ -10,6 +10,7 @@ var etat = ""
 var p1_victory = 0
 var p2_victory = 0
 var nb_manche = 9
+var jeu_decisif = 5
 
 func _init() -> void:
 	var folders = dir.get_directories()
@@ -81,7 +82,7 @@ func next(conditions,chemin = null) -> void:
 			# CHANGEMENT D'ETAT
 			etat = "Minijeu"
 			
-		elif etat == "Minijeu" and (p1_victory > nb_manche/2 or p2_victory > nb_manche/2):
+		elif etat == "Minijeu" and (p1_victory >= jeu_decisif or p2_victory >= jeu_decisif):
 			# RETOUR AU MENU
 			var scene = load("res://GameStructure/podium.tscn")
 			var instance = scene.instantiate()
@@ -90,7 +91,7 @@ func next(conditions,chemin = null) -> void:
 			# CHANGEMENT D'ETAT
 			etat = "FinJeu"
 			
-		elif etat == "Minijeu" and p1_victory < nb_manche/2 and p2_victory < nb_manche/2:
+		elif etat == "Minijeu" and p1_victory < jeu_decisif and p2_victory < jeu_decisif:
 			# RETOUR AU MENU
 			var scene = load("res://GameStructure/vainqueur.tscn")
 			var instance = scene.instantiate()
@@ -109,7 +110,7 @@ func MinigameResults(result) -> void:
 		p1_victory += 1
 	else:
 		p2_victory += 1
-	print("Joueur 1 : ",p1_victory," / Joueur 2 : ",p2_victory)
 	print()
+	print("Joueur 1 : ",p1_victory," / Joueur 2 : ",p2_victory)
 		
 	next(true)
