@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://b33wpg74j3r8a"]
+
+[ext_resource type="PackedScene" uid="uid://du8n473tknlxu" path="res://GameUtilities/game_utilities.tscn" id="1_bn47r"]
+[ext_resource type="Script" uid="uid://dtwnpnisp8uuv" path="res://Minigames/QuizzTime/quizz_time.gd" id="2_vs8r3"]
+[ext_resource type="AudioStream" uid="uid://cc1hdrxqerfxw" path="res://Minigames/QuizzTime/OST/A_Crew_Shanty.mp3" id="3_issun"]
+
+[node name="pirate_fall" instance=ExtResource("1_bn47r")]
+script = ExtResource("2_vs8r3")
+
+[node name="UI" type="Control" parent="." index="0"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="UI" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.09019608, 0.16078432, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI" index="1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer" index="0"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Sélectionnez la bonne réponse : le plus rapide gagne des points !
+"
+
+[node name="NomJeu" parent="Utilities" index="1"]
+text = "QUIZZ TIME !"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("3_issun")
+autoplay = true
