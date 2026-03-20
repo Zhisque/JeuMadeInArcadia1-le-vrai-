@@ -1,9 +1,0 @@
-[gd_resource type="JSON" format=3 uid="uid://cgr0sfq237co1"]
-
-[resource]
-data = [{
-"answer": "La Loire",
-"image": "res://Minigames/QuizzTime/Assets/pictures/loire.png",
-"miss": ["La Seine", "Le Rhône", "La Garonne"],
-"title": "Quel est le nom de ce fleuve français ?"
-}]

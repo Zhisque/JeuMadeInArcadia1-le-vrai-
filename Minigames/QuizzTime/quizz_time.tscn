@@ -1,11 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://b33wpg74j3r8a"]
+[gd_scene load_steps=15 format=3 uid="uid://b33wpg74j3r8a"]
 
 [ext_resource type="PackedScene" uid="uid://du8n473tknlxu" path="res://GameUtilities/game_utilities.tscn" id="1_bn47r"]
 [ext_resource type="Script" uid="uid://dtwnpnisp8uuv" path="res://Minigames/QuizzTime/quizz_time.gd" id="2_vs8r3"]
-[ext_resource type="AudioStream" uid="uid://cc1hdrxqerfxw" path="res://Minigames/QuizzTime/OST/A_Crew_Shanty.mp3" id="3_issun"]
+[ext_resource type="Texture2D" uid="uid://dv1ycbph8tfes" path="res://Minigames/QuizzTime/quizz_time_preview.png" id="3_epa2d"]
+[ext_resource type="Texture2D" uid="uid://ivddxjdd2mdf" path="res://Minigames/QuizzTime/Assets/rectP1.png" id="4_uu17r"]
+[ext_resource type="Texture2D" uid="uid://cyp4l8135x0ud" path="res://Minigames/QuizzTime/Assets/rectP2.png" id="5_m5ckr"]
+[ext_resource type="Texture2D" uid="uid://b5blkdgeq7d1" path="res://Minigames/QuizzTime/Assets/rectBP.png" id="6_5sx1y"]
 
-[node name="pirate_fall" instance=ExtResource("1_bn47r")]
+[sub_resource type="Theme" id="Theme_epa2d"]
+Label/constants/outline_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epa2d"]
+bg_color = Color(0.9372549, 0.35686275, 0.25882354, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uu17r"]
+bg_color = Color(0.9490196, 0.46666667, 0.24313726, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hwao2"]
+bg_color = Color(0.93333334, 0.9137255, 0.22745098, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="FontVariation" id="FontVariation_epa2d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5ckr"]
+bg_color = Color(0.49803922, 0.7647059, 0.28235295, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5sx1y"]
+bg_color = Color(0.28235295, 0.28627452, 0.61960787, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hlqfk"]
+bg_color = Color(0.81960785, 0.3764706, 0.6431373, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="quizz_time" instance=ExtResource("1_bn47r")]
 script = ExtResource("2_vs8r3")
+json_path = "res://Minigames/QuizzTime/Assets/questions.json"
 
 [node name="UI" type="Control" parent="." index="0"]
 layout_mode = 3
@@ -24,30 +75,303 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.09019608, 0.16078432, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="UI" index="1"]
+[node name="Label" type="Label" parent="UI" index="1"]
 layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.195
+offset_top = 52.0
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 20
+text = "Sélectionnez la bonne réponse : le plus rapide gagne des points !
+"
+horizontal_alignment = 1
+
+[node name="Score1" type="Label" parent="UI" index="2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 52.0
+offset_right = 150.0
+offset_bottom = 107.0
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Score2" type="Label" parent="UI" index="3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_top = 52.0
+offset_right = -50.0
+offset_bottom = 107.0
+grow_horizontal = 0
+size_flags_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuestionLabel" type="Label" parent="UI" index="4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_top = 100.0
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 40
+text = "QUESTION"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Picture" type="TextureRect" parent="UI" index="5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 250.0
+offset_top = 180.0
+offset_right = -250.0
+offset_bottom = -350.0
+texture = ExtResource("3_epa2d")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="GridContainer" type="GridContainer" parent="UI" index="6"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 700.0
+offset_right = 1100.0
+offset_bottom = 904.0
+theme = SubResource("Theme_epa2d")
+columns = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Answer1" type="Panel" parent="UI/GridContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_epa2d")
+
+[node name="Label" type="Label" parent="UI/GridContainer/Answer1" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "A1"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Answer2" type="Panel" parent="UI/GridContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_uu17r")
+
+[node name="Label" type="Label" parent="UI/GridContainer/Answer2" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "A2"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Answer3" type="Panel" parent="UI/GridContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_hwao2")
+
+[node name="Label" type="Label" parent="UI/GridContainer/Answer3" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_epa2d")
+theme_override_font_sizes/font_size = 30
+text = "A3"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Answer4" type="Panel" parent="UI/GridContainer" index="3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_m5ckr")
+
+[node name="Label" type="Label" parent="UI/GridContainer/Answer4" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "A4"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Answer5" type="Panel" parent="UI/GridContainer" index="4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_5sx1y")
+
+[node name="Label" type="Label" parent="UI/GridContainer/Answer5" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "A5"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Answer6" type="Panel" parent="UI/GridContainer" index="5"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_hlqfk")
+
+[node name="Label" type="Label" parent="UI/GridContainer/Answer6" index="0"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "A6"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Pointer1" type="TextureRect" parent="UI" index="7"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimerBar" type="ProgressBar" parent="UI" index="8"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 0
+offset_left = 50.0
+offset_top = 954.0
+offset_right = 1330.0
+offset_bottom = 974.0
+max_value = 1.0
+value = 1.0
+show_percentage = false
+
+[node name="Cursor9P1" type="NinePatchRect" parent="." index="1"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
+texture = ExtResource("4_uu17r")
+draw_center = false
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer" index="0"]
-layout_mode = 2
+[node name="Cursor9P2" type="NinePatchRect" parent="." index="2"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_m5ckr")
+draw_center = false
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
-[node name="Label" type="Label" parent="UI/MarginContainer/VBoxContainer" index="0"]
-layout_mode = 2
-size_flags_horizontal = 4
-text = "Sélectionnez la bonne réponse : le plus rapide gagne des points !
-"
+[node name="Cursor9BP" type="NinePatchRect" parent="." index="3"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_5sx1y")
+draw_center = false
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [node name="NomJeu" parent="Utilities" index="1"]
 text = "QUIZZ TIME !"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
-stream = ExtResource("3_issun")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
 autoplay = true
+
+[node name="RespondTimer" type="Timer" parent="." index="6"]
+wait_time = 5.0
+one_shot = true
+
+[node name="RevealTimer" type="Timer" parent="." index="7"]
+one_shot = true
+
+[connection signal="timeout" from="RespondTimer" to="." method="_on_respond_timer_timeout"]
+[connection signal="timeout" from="RevealTimer" to="." method="_on_reveal_timer_timeout"]

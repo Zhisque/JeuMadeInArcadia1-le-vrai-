@@ -1,0 +1,27 @@
+[
+    {
+        "id":1,
+        "question":"Quel est le nom de ce fleuve français ?",
+        "answer":"La Loire",
+        "miss": [
+            "La Seine",
+            "La Garonne",
+            "Le Rhône",
+            "Le Rhin"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/loire.png"
+    },
+    {
+        "id":2,
+        "question":"À quelle région appartient ce drapeau ?",
+        "answer":"La Franche-Comté",
+        "miss": [
+            "La Bretagne",
+            "PACA",
+            "L'Île-de-France",
+            "La Picardie",
+            "L'Aquitaine"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/franche_comte_drapeau.png"
+    }
+]
