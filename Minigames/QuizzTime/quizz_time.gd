@@ -9,7 +9,7 @@ var questions : Array = []
 	$UI/GridContainer/Answer2, $UI/GridContainer/Answer5,
 	$UI/GridContainer/Answer3, $UI/GridContainer/Answer6]
 @onready var question_label = $UI/QuestionLabel
-@onready var question_image = $UI/Picture
+@onready var question_image = $UI/PanelContainer/Picture
 
 @onready var respond_timer = $RespondTimer
 @onready var reveal_timer = $RevealTimer
@@ -21,6 +21,8 @@ var questions : Array = []
 @onready var cursor_p1 = $Cursor9P1
 @onready var cursor_p2 = $Cursor9P2
 @onready var cursor_bp = $Cursor9BP
+
+var shader_gray = ShaderMaterial.new()
 
 const inputs_p1 = ["Bouton HautGauche P1", "Bouton BasGauche P1", "Bouton HautCentre P1", "Bouton BasCentre P1", "Bouton HautDroite P1", "Bouton BasDroite P1"]
 const inputs_p2 = ["Bouton HautGauche P2", "Bouton BasGauche P2", "Bouton HautCentre P2", "Bouton BasCentre P2", "Bouton HautDroite P2", "Bouton BasDroite P2"]
@@ -61,7 +63,8 @@ func _ready() -> void:
 	load_json()
 	if questions.size() < 1:
 		end_game_early.emit()
-	
+	shader_gray.shader = load("res://Minigames/QuizzTime/Assets/grayscale.gdshader")
+
 	state = GameState.START
 
 func _process(delta: float) -> void:
@@ -97,6 +100,8 @@ func start_new_round() -> void:
 	
 	for el in [cursor_p1, cursor_p2, cursor_bp]:
 		hide_cursor(el)
+	for i in range(n_answer):
+		answerPanels[i].material = null
 
 func set_new_question() -> void:
 	#TODO pick random not yet played
@@ -167,7 +172,10 @@ func finish_round(winner: int) -> void:
 	scoreboard_p2.text = str(score_p2)
 	
 	state = GameState.REVEAL
-	#TODO afficher la bonne réponse
+	for i in range(n_answer):
+		if i != answer_right:
+			answerPanels[i].material = shader_gray
+	
 	reveal_timer.start()
 
 func _on_respond_timer_timeout() -> void:
@@ -186,4 +194,5 @@ func show_cursor(cursor: NinePatchRect, pos: int) -> void:
 		return
 	cursor.show()
 	cursor.reparent(answerPanels[pos])
-	cursor.position = Vector2.ZERO
+	cursor.position = Vector2(-6, -6)
+	cursor.size = Vector2(282 if n_answer == 6 else 420, 112)

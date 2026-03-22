@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b33wpg74j3r8a"]
+[gd_scene load_steps=17 format=3 uid="uid://b33wpg74j3r8a"]
 
 [ext_resource type="PackedScene" uid="uid://du8n473tknlxu" path="res://GameUtilities/game_utilities.tscn" id="1_bn47r"]
 [ext_resource type="Script" uid="uid://dtwnpnisp8uuv" path="res://Minigames/QuizzTime/quizz_time.gd" id="2_vs8r3"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://ivddxjdd2mdf" path="res://Minigames/QuizzTime/Assets/rectP1.png" id="4_uu17r"]
 [ext_resource type="Texture2D" uid="uid://cyp4l8135x0ud" path="res://Minigames/QuizzTime/Assets/rectP2.png" id="5_m5ckr"]
 [ext_resource type="Texture2D" uid="uid://b5blkdgeq7d1" path="res://Minigames/QuizzTime/Assets/rectBP.png" id="6_5sx1y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwao2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5ckr"]
 
 [sub_resource type="Theme" id="Theme_epa2d"]
 Label/constants/outline_size = 8
@@ -128,20 +132,28 @@ text = "QUESTION"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Picture" type="TextureRect" parent="UI" index="5"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="PanelContainer" type="Panel" parent="UI" index="5"]
+layout_mode = 0
 offset_left = 250.0
 offset_top = 180.0
-offset_right = -250.0
-offset_bottom = -350.0
+offset_right = 1130.0
+offset_bottom = 680.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hwao2")
+
+[node name="Picture" type="TextureRect" parent="UI/PanelContainer" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_epa2d")
-expand_mode = 1
+expand_mode = 3
 stretch_mode = 4
 
 [node name="GridContainer" type="GridContainer" parent="UI" index="6"]
+material = SubResource("ShaderMaterial_m5ckr")
 layout_mode = 0
 offset_left = 280.0
 offset_top = 700.0
@@ -296,12 +308,7 @@ text = "A6"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Pointer1" type="TextureRect" parent="UI" index="7"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TimerBar" type="ProgressBar" parent="UI" index="8"]
+[node name="TimerBar" type="ProgressBar" parent="UI" index="7"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 0
 offset_left = 50.0
@@ -314,49 +321,58 @@ show_percentage = false
 
 [node name="Cursor9P1" type="NinePatchRect" parent="." index="1"]
 visible = false
+z_index = 10
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource("4_uu17r")
 draw_center = false
-patch_margin_left = 14
-patch_margin_top = 14
-patch_margin_right = 14
-patch_margin_bottom = 14
+patch_margin_left = 56
+patch_margin_top = 56
+patch_margin_right = 56
+patch_margin_bottom = 56
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [node name="Cursor9P2" type="NinePatchRect" parent="." index="2"]
 visible = false
+z_index = 10
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource("5_m5ckr")
 draw_center = false
-patch_margin_left = 14
-patch_margin_top = 14
-patch_margin_right = 14
-patch_margin_bottom = 14
+patch_margin_left = 56
+patch_margin_top = 56
+patch_margin_right = 56
+patch_margin_bottom = 56
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
 [node name="Cursor9BP" type="NinePatchRect" parent="." index="3"]
 visible = false
+z_index = 10
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource("6_5sx1y")
 draw_center = false
-patch_margin_left = 14
-patch_margin_top = 14
-patch_margin_right = 14
-patch_margin_bottom = 14
+patch_margin_left = 56
+patch_margin_top = 56
+patch_margin_right = 56
+patch_margin_bottom = 56
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
