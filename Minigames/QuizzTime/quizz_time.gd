@@ -1,6 +1,7 @@
 extends GameUtilities
 
 @export var json_path : String = "res://Minigames/QuizzTime/Assets/questions.json"
+@export var score_max : int = 10
 var questions : Array = []
 
 @onready var answerContainer = $UI/GridContainer
@@ -59,7 +60,10 @@ func load_json() -> void:
 func _ready() -> void:
 	# Appelle la fonciton _ready() de GameUtilities, cette ligne est tres importante
 	super()
-	
+
+	question_label.hide()
+	question_image.hide()
+
 	load_json()
 	if questions.size() < 1:
 		end_game_early.emit()
@@ -77,6 +81,8 @@ func _process(delta: float) -> void:
 		match state:
 			GameState.START:
 				start_new_round()
+				question_label.show()
+				question_image.show()
 			GameState.RESPOND:
 				timer_bar.value = respond_timer.time_left / respond_timer.wait_time
 				check_buttons()
@@ -104,8 +110,7 @@ func start_new_round() -> void:
 		answerPanels[i].material = null
 
 func set_new_question() -> void:
-	#TODO pick random not yet played
-	current_question = questions.pick_random()
+	current_question = questions.pop_at(randi() % questions.size())
 	question_label.text = current_question["question"]
 	var answers : Array = current_question["miss"]
 	if answers.size() >= 5:
@@ -150,7 +155,7 @@ func check_buttons() -> void:
 func check_answers() -> void:
 	if answer_p1 == answer_right and answer_p2 == answer_right:
 		print("Too fast! Both answered at the same time")
-		finish_round(0)
+		finish_round(3)
 	elif answer_p1 == answer_right:
 		print("P1 won the round!")
 		finish_round(1)
@@ -165,8 +170,10 @@ func finish_round(winner: int) -> void:
 	respond_timer.stop()
 	if winner == 1:
 		score_p1 += 1
+		$UI/AnimationPlayer.play("P1_win")
 	elif winner == 2:
 		score_p2 += 1
+		$UI/AnimationPlayer.play("P2_win")
 	
 	scoreboard_p1.text = str(score_p1)
 	scoreboard_p2.text = str(score_p2)
@@ -182,9 +189,12 @@ func _on_respond_timer_timeout() -> void:
 	finish_round(0)
 
 func _on_reveal_timer_timeout() -> void:
-	start_new_round()
 	#TODO end of game if enough points -> emit end_game
-
+	if questions.size() < 1 or score_p1 >= score_max or score_p2 >= score_max:
+		end_game.emit(get_winner())
+	else:
+		start_new_round()
+	
 func hide_cursor(cursor: NinePatchRect) -> void:
 	cursor.hide()
 	cursor.reparent(self)

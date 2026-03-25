@@ -23,5 +23,100 @@
             "L'Aquitaine"
         ],
         "picture":"res://Minigames/QuizzTime/Assets/pictures/franche_comte_drapeau.png"
+    },
+    {
+        "id":3,
+        "question":"Appuyez sur le bouton « Rouge »",
+        "answer":"Rouge",
+        "miss": [
+            "Orange",
+            "Jaune",
+            "Vert",
+            "Bleu",
+            "Rose"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/melon_cantaloupe.png"
+    },
+    {
+        "id":4,
+        "question":"Quel élément a pour symbole Sb ?",
+        "answer":"L'Antimoine",
+        "miss": [
+            "Le Tungstène",
+            "Le Selbénium",
+            "L'Étain"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/antimoine.png"
+    },
+    {
+        "id":5,
+        "question":"À quelle marque appartient ce logo ?",
+        "answer":"Subaru",
+        "miss": [
+            "Yamaha",
+            "Mitsubishi",
+            "Nintendo",
+            "Kawasaki"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/subaru.png"
+    },
+    {
+        "id":6,
+        "question":"À quelle marque appartient ce logo ?",
+        "answer":"Volkswagen",
+        "miss": [
+            "Volksvagen",
+            "Wolkswagen",
+            "Volskwagen",
+            "Volkswagne"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/volkswagen.png"
+    },
+    {
+        "id":7,
+        "question":"Combien de faces a cette forme ?",
+        "answer":"12",
+        "miss": [
+            "20",
+            "10",
+            "16",
+            "14"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/rhombic_dodecahedron.png"
+    },
+    {
+        "id":8,
+        "question":"Combien de faces a cette forme ?",
+        "answer":"24",
+        "miss": [
+            "30",
+            "16",
+            "20"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/hypercube.png"
+    },
+    {
+        "id":9,
+        "question":"Combien de cellules a cette forme ?",
+        "answer":"8",
+        "miss": [
+            "6",
+            "10",
+            "1"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/hypercube.png"
+    },
+    {
+        "id":10,
+        "question":"Quel président États-Unien a déclaré la guerre à l'Irak",
+        "answer":"George W. Bush",
+        "miss": [
+            "George H. W. Bush",
+            "Barrack Obama",
+            "Donald Trump",
+            "James Cameron",
+            "Saddam Hussein"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/iraq_war.jpg"
     }
 ]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b33wpg74j3r8a"]
+[gd_scene load_steps=21 format=3 uid="uid://b33wpg74j3r8a"]
 
 [ext_resource type="PackedScene" uid="uid://du8n473tknlxu" path="res://GameUtilities/game_utilities.tscn" id="1_bn47r"]
 [ext_resource type="Script" uid="uid://dtwnpnisp8uuv" path="res://Minigames/QuizzTime/quizz_time.gd" id="2_vs8r3"]
@@ -6,6 +6,60 @@
 [ext_resource type="Texture2D" uid="uid://ivddxjdd2mdf" path="res://Minigames/QuizzTime/Assets/rectP1.png" id="4_uu17r"]
 [ext_resource type="Texture2D" uid="uid://cyp4l8135x0ud" path="res://Minigames/QuizzTime/Assets/rectP2.png" id="5_m5ckr"]
 [ext_resource type="Texture2D" uid="uid://b5blkdgeq7d1" path="res://Minigames/QuizzTime/Assets/rectBP.png" id="6_5sx1y"]
+
+[sub_resource type="Animation" id="Animation_hwao2"]
+resource_name = "P1_win"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/PolygonP1:color:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.2, 1.0, 0.2]
+}
+
+[sub_resource type="Animation" id="Animation_5sx1y"]
+resource_name = "P2_win"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/PolygonP2:color:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4333, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.2, 1.0, 0.2]
+}
+
+[sub_resource type="Animation" id="Animation_m5ckr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/PolygonP1:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.39215687]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5sx1y"]
+_data = {
+&"P1_win": SubResource("Animation_hwao2"),
+&"P2_win": SubResource("Animation_5sx1y"),
+&"RESET": SubResource("Animation_m5ckr")
+}
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hwao2"]
 
@@ -61,6 +115,7 @@ corner_radius_bottom_left = 15
 [node name="quizz_time" instance=ExtResource("1_bn47r")]
 script = ExtResource("2_vs8r3")
 json_path = "res://Minigames/QuizzTime/Assets/questions.json"
+score_max = 10
 
 [node name="UI" type="Control" parent="." index="0"]
 layout_mode = 3
@@ -79,19 +134,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.09019608, 0.16078432, 1)
 
-[node name="Label" type="Label" parent="UI" index="1"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.195
-offset_top = 52.0
-size_flags_horizontal = 6
-theme_override_font_sizes/font_size = 20
-text = "Sélectionnez la bonne réponse : le plus rapide gagne des points !
-"
-horizontal_alignment = 1
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI" index="1"]
+libraries = {
+&"": SubResource("AnimationLibrary_5sx1y")
+}
+
+[node name="PolygonP1" type="Polygon2D" parent="UI/AnimationPlayer" index="0"]
+color = Color(0.050980393, 0.11372549, 0.5803922, 0.39215687)
+polygon = PackedVector2Array(0, 0, 0, 1024, 655, 1024, 587, 877, 736, 626, 539, 443, 765, 281, 596, 0)
+uv = PackedVector2Array(-85, -31, -58, 1033, 662, 1041, 587, 877, 736, 626, 539, 443, 765, 281, 571, -42)
+
+[node name="PolygonP2" type="Polygon2D" parent="UI/AnimationPlayer" index="1"]
+position = Vector2(110.05066, 22.586113)
+scale = Vector2(0.95166856, 0.96397185)
+color = Color(0.25490198, 0.78039217, 0.78431374, 0.2)
+polygon = PackedVector2Array(1334.4451, -23.430264, 1334.4451, 1038.8414, 660.8912, 1038.8414, 587, 877, 736, 626, 539, 443, 765, 281, 582.0822, -23.430264)
 
 [node name="Score1" type="Label" parent="UI" index="2"]
+z_index = 10
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 0
 offset_left = 50.0
@@ -105,6 +165,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Score2" type="Label" parent="UI" index="3"]
+z_index = 10
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
 anchors_preset = 1
@@ -122,6 +183,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="QuestionLabel" type="Label" parent="UI" index="4"]
+z_index = 10
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
@@ -133,6 +195,7 @@ horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="PanelContainer" type="Panel" parent="UI" index="5"]
+z_index = 10
 layout_mode = 0
 offset_left = 250.0
 offset_top = 180.0
@@ -141,6 +204,7 @@ offset_bottom = 680.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hwao2")
 
 [node name="Picture" type="TextureRect" parent="UI/PanelContainer" index="0"]
+z_index = 10
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -153,6 +217,7 @@ expand_mode = 3
 stretch_mode = 4
 
 [node name="GridContainer" type="GridContainer" parent="UI" index="6"]
+z_index = 10
 material = SubResource("ShaderMaterial_m5ckr")
 layout_mode = 0
 offset_left = 280.0
@@ -164,12 +229,14 @@ columns = 3
 metadata/_edit_use_anchors_ = true
 
 [node name="Answer1" type="Panel" parent="UI/GridContainer" index="0"]
+z_index = 10
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_epa2d")
 
 [node name="Label" type="Label" parent="UI/GridContainer/Answer1" index="0"]
+z_index = 10
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -183,17 +250,18 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
-text = "A1"
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Answer2" type="Panel" parent="UI/GridContainer" index="1"]
+z_index = 10
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_uu17r")
 
 [node name="Label" type="Label" parent="UI/GridContainer/Answer2" index="0"]
+z_index = 10
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -207,17 +275,18 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
-text = "A2"
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Answer3" type="Panel" parent="UI/GridContainer" index="2"]
+z_index = 10
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_hwao2")
 
 [node name="Label" type="Label" parent="UI/GridContainer/Answer3" index="0"]
+z_index = 10
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -232,17 +301,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = SubResource("FontVariation_epa2d")
 theme_override_font_sizes/font_size = 30
-text = "A3"
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Answer4" type="Panel" parent="UI/GridContainer" index="3"]
+z_index = 10
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_m5ckr")
 
 [node name="Label" type="Label" parent="UI/GridContainer/Answer4" index="0"]
+z_index = 10
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -256,17 +326,18 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
-text = "A4"
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Answer5" type="Panel" parent="UI/GridContainer" index="4"]
+z_index = 10
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_5sx1y")
 
 [node name="Label" type="Label" parent="UI/GridContainer/Answer5" index="0"]
+z_index = 10
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -280,17 +351,18 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
-text = "A5"
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="Answer6" type="Panel" parent="UI/GridContainer" index="5"]
+z_index = 10
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_hlqfk")
 
 [node name="Label" type="Label" parent="UI/GridContainer/Answer6" index="0"]
+z_index = 10
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -304,11 +376,11 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
-text = "A6"
 horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="TimerBar" type="ProgressBar" parent="UI" index="7"]
+z_index = 10
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 0
 offset_left = 50.0
@@ -321,7 +393,7 @@ show_percentage = false
 
 [node name="Cursor9P1" type="NinePatchRect" parent="." index="1"]
 visible = false
-z_index = 10
+z_index = 100
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -340,7 +412,7 @@ axis_stretch_vertical = 2
 
 [node name="Cursor9P2" type="NinePatchRect" parent="." index="2"]
 visible = false
-z_index = 10
+z_index = 100
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -359,7 +431,7 @@ axis_stretch_vertical = 2
 
 [node name="Cursor9BP" type="NinePatchRect" parent="." index="3"]
 visible = false
-z_index = 10
+z_index = 100
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -376,8 +448,22 @@ patch_margin_bottom = 56
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
+[node name="Timer" parent="Utilities" index="0"]
+z_index = 100
+
 [node name="NomJeu" parent="Utilities" index="1"]
+z_index = 100
 text = "QUIZZ TIME !"
+
+[node name="Regle" parent="Utilities" index="2"]
+z_index = 100
+text = "Sélectionnez la bonne réponse : le plus rapide gagne des points !"
+
+[node name="Décompte" parent="Utilities" index="3"]
+z_index = 100
+
+[node name="Transition" parent="Utilities" index="5"]
+z_index = 100
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
 autoplay = true
