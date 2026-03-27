@@ -108,7 +108,7 @@
     },
     {
         "id":10,
-        "question":"Quel président États-Unien a déclaré la guerre à l'Irak",
+        "question":"Quel président étasunien a déclaré la guerre à l'Irak",
         "answer":"George W. Bush",
         "miss": [
             "George H. W. Bush",
@@ -118,5 +118,135 @@
             "Saddam Hussein"
         ],
         "picture":"res://Minigames/QuizzTime/Assets/pictures/iraq_war.jpg"
+    },
+    {
+        "id":11,
+        "question":"Quel est ce pays ?",
+        "answer":"Le Japon",
+        "miss": [
+            "La Corée du Sud",
+            "La Chine",
+            "Les Philippines",
+            "L'Océanie"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/japan.png"
+    },
+    {
+        "id":12,
+        "question":"Quelle est la plus grande île de cet archipel ?",
+        "answer":"Honshū",
+        "miss": [
+            "Hokkaidō",
+            "Shikoku",
+            "Kyūshū",
+            "Okinawa"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/japan.png"
+    },
+    {
+        "id":13,
+        "question":"Quel est ce département français ?",
+        "answer":"La Guadeloupe",
+        "miss": [
+            "La Martinique",
+            "La Dominique",
+            "Mayotte"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/guadeloupe.png"
+    },
+    {
+        "id":14,
+        "question":"Quel est ce pokémon ?",
+        "answer":"Pikachu",
+        "miss": [
+            "Pichu",
+            "Salamèche",
+            "Ratata",
+            "Évoli",
+            "Mimiqui"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/pikachu.png"
+    },
+    {
+        "id":15,
+        "question":"Quel est ce pokémon ?",
+        "answer":"Voltorbe",
+        "miss": [
+            "Électrode",
+            "Bouboule",
+            "Magnéti"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/voltorbe.png"
+    },
+    {
+        "id":16,
+        "question":"Quel est le nom de ce personnage ?",
+        "answer":"Pr. Chen",
+        "miss": [
+            "Pr. Chêne",
+            "Pr. Shen",
+            "Pr. Chaîne",
+            "Pr. Shayne",
+            "Pr. Chienne"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/pr_chen.png"
+    },
+    {
+        "id":17,
+        "question":"En quelle année la bataille de Marignan a-t-elle eu lieu ?",
+        "answer":"1515",
+        "miss": [
+            "1414",
+            "1492",
+            "1535",
+            "1601"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/marignan.jpg"
+    },
+    {
+        "id":18,
+        "question":"Comment dit-on chien en espagnol ?",
+        "answer":"Perro",
+        "miss": [
+            "Canis",
+            "Doggo",
+            "Chieno",
+            "Cane"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/chien.png"
+    },
+    {
+        "id":19,
+        "question":"Comment dit-on chien en espagnol ?",
+        "answer":"Perro",
+        "miss": [
+            "Canis",
+            "Doggo",
+            "Chieno",
+            "Cane"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/chien.png"
+    },
+    {
+        "id":20,
+        "question":"Comment dit-on chien en allemand ?",
+        "answer":"Hund",
+        "miss": [
+            "Doch",
+            "Wolfe",
+            "Katze"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/chien.png"
+    },
+    {
+        "id":21,
+        "question":"Que veut dire ce caractère CJK ?",
+        "answer":"Poire",
+        "miss": [
+            "Maison",
+            "Baleine",
+            "France"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/poire_zh.png"
     }
 ]

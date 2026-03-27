@@ -16,8 +16,8 @@ var questions : Array = []
 @onready var reveal_timer = $RevealTimer
 @onready var timer_bar = $UI/TimerBar
 
-@onready var scoreboard_p1 = $UI/Score1
-@onready var scoreboard_p2 = $UI/Score2
+@onready var scoreboard_p1 = $UI/ScoreBar1
+@onready var scoreboard_p2 = $UI/ScoreBar2
 
 @onready var cursor_p1 = $Cursor9P1
 @onready var cursor_p2 = $Cursor9P2
@@ -69,6 +69,8 @@ func _ready() -> void:
 		end_game_early.emit()
 	shader_gray.shader = load("res://Minigames/QuizzTime/Assets/grayscale.gdshader")
 
+	scoreboard_p1.max_value = score_max
+	scoreboard_p2.max_value = score_max
 	state = GameState.START
 
 func _process(delta: float) -> void:
@@ -175,8 +177,8 @@ func finish_round(winner: int) -> void:
 		score_p2 += 1
 		$UI/AnimationPlayer.play("P2_win")
 	
-	scoreboard_p1.text = str(score_p1)
-	scoreboard_p2.text = str(score_p2)
+	scoreboard_p1.value = score_p1
+	scoreboard_p2.value = score_p2
 	
 	state = GameState.REVEAL
 	for i in range(n_answer):
@@ -206,3 +208,6 @@ func show_cursor(cursor: NinePatchRect, pos: int) -> void:
 	cursor.reparent(answerPanels[pos])
 	cursor.position = Vector2(-6, -6)
 	cursor.size = Vector2(282 if n_answer == 6 else 420, 112)
+
+
+#TODO faire un reveal pour les quel est ce pokémon
