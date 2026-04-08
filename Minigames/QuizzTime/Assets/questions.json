@@ -9,7 +9,8 @@
             "Le Rhône",
             "Le Rhin"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/loire.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/loire.png",
+        "cat":"geo"
     },
     {
         "id":2,
@@ -22,7 +23,8 @@
             "La Picardie",
             "L'Aquitaine"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/franche_comte_drapeau.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/franche_comte_drapeau.png",
+        "cat":"geo"
     },
     {
         "id":3,
@@ -35,7 +37,8 @@
             "Bleu",
             "Rose"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/melon_cantaloupe.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/melon_cantaloupe.png",
+        "cat":"gi_trick"
     },
     {
         "id":4,
@@ -46,7 +49,8 @@
             "Le Selbénium",
             "L'Étain"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/antimoine.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/antimoine.png",
+        "cat":"science"
     },
     {
         "id":5,
@@ -58,7 +62,8 @@
             "Nintendo",
             "Kawasaki"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/subaru.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/subaru.png",
+        "cat":"gi_trick"
     },
     {
         "id":6,
@@ -70,7 +75,8 @@
             "Volskwagen",
             "Volkswagne"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/volkswagen.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/volkswagen.png",
+        "cat":"gi_trick"
     },
     {
         "id":7,
@@ -82,7 +88,8 @@
             "16",
             "14"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/rhombic_dodecahedron.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/rhombic_dodecahedron.png",
+        "cat":"science"
     },
     {
         "id":8,
@@ -93,7 +100,8 @@
             "16",
             "20"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/hypercube.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/hypercube.png",
+        "cat":"science"
     },
     {
         "id":9,
@@ -104,7 +112,8 @@
             "10",
             "1"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/hypercube.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/hypercube.png",
+        "cat":"science"
     },
     {
         "id":10,
@@ -117,7 +126,8 @@
             "James Cameron",
             "Saddam Hussein"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/iraq_war.jpg"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/iraq_war.jpg",
+        "cat":"hist"
     },
     {
         "id":11,
@@ -129,7 +139,8 @@
             "Les Philippines",
             "L'Océanie"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/japan.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/japan.png",
+        "cat":"geo"
     },
     {
         "id":12,
@@ -141,7 +152,8 @@
             "Kyūshū",
             "Okinawa"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/japan.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/japan.png",
+        "cat":"geo"
     },
     {
         "id":13,
@@ -152,7 +164,8 @@
             "La Dominique",
             "Mayotte"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/guadeloupe.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/guadeloupe.png",
+        "cat":"geo"
     },
     {
         "id":14,
@@ -165,7 +178,8 @@
             "Évoli",
             "Mimiqui"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/pikachu.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/pikachu.png",
+        "cat":"jeux"
     },
     {
         "id":15,
@@ -176,7 +190,8 @@
             "Bouboule",
             "Magnéti"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/voltorbe.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/voltorbe.png",
+        "cat":"jeux"
     },
     {
         "id":16,
@@ -189,7 +204,8 @@
             "Pr. Shayne",
             "Pr. Chienne"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/pr_chen.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/pr_chen.png",
+        "cat":"jeux"
     },
     {
         "id":17,
@@ -201,7 +217,8 @@
             "1535",
             "1601"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/marignan.jpg"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/marignan.jpg",
+        "cat":"hist"
     },
     {
         "id":18,
@@ -213,7 +230,8 @@
             "Chieno",
             "Cane"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/chien.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/chien.png",
+        "cat":"lang"
     },
     {
         "id":19,
@@ -225,7 +243,8 @@
             "Chieno",
             "Cane"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/chien.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/chien.png",
+        "cat":"lang"
     },
     {
         "id":20,
@@ -236,7 +255,8 @@
             "Wolfe",
             "Katze"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/chien.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/chien.png",
+        "cat":"lang"
     },
     {
         "id":21,
@@ -247,6 +267,303 @@
             "Baleine",
             "France"
         ],
-        "picture":"res://Minigames/QuizzTime/Assets/pictures/poire_zh.png"
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/poire_zh.png",
+        "cat":"lang"
+    },
+    {
+        "id":22,
+        "question":"Combien pèse en moyenne une balle de tennis réglementaire ?",
+        "answer":"58g",
+        "miss": [
+            "12g",
+            "23g",
+            "112g"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/tennis_ball.png",
+        "cat":"sport"
+    },
+    {
+        "id":23,
+        "question":"Lequel de ces animaux n'existe pas dans le zodiaque chinois ?",
+        "answer":"L'ours",
+        "miss": [
+            "Le lapin",
+            "Le dragon",
+            "Le chien"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/yin_yang.png",
+        "cat":"gi_trick"
+    },
+    {
+        "id":24,
+        "question":"Lequel de ces animaux du zodiaque chinois n'existe pas?",
+        "answer":"Le dragon",
+        "miss": [
+            "Le lapin",
+            "Le coq",
+            "Le chien",
+            "Le singe"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/yin_yang.png",
+        "cat":"gi_trick"
+    },
+    {
+        "id":25,
+        "question":"Combien y a-t-il de trous dans une boule de bowling standard ?",
+        "answer":"3",
+        "miss": [
+            "2",
+            "4",
+            "5"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/bowling.png",
+        "cat":"sport"
+    },
+    {
+        "id":26,
+        "question":"Comment s'appelle le chef du village d'Astérix ?",
+        "answer":"Abraracourcix",
+        "miss": [
+            "Assurancetourix",
+            "Ordralfabétix",
+            "Cétautomatix"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/asterix_obelix.png",
+        "cat":"film"
+    },
+    {
+        "id":27,
+        "question":"Au scrabble français, combien de points vaut la lettre J ?",
+        "answer":"8",
+        "miss": [
+            "2",
+            "10",
+            "6"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/scrabble.png",
+        "cat":"jeux"
+    },
+    {
+        "id":28,
+        "question":"Lequel de ces romans n'a pas été écrit par Victor Hugo ?",
+        "answer":"Germinal",
+        "miss": [
+            "Le Dernier Jour d'un condamné",
+            "Notre-Dame de Paris",
+            "Les Misérables"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/victor_hugo.png",
+        "cat":"art"
+    },
+    {
+        "id":29,
+        "question":"Quelle chanson française commence par les mots « Tourner le temps à l'orage » ?",
+        "answer":"Allumer le feu",
+        "miss": [
+            "Amsterdam",
+            "La Bohème",
+            "Mistral Gagnant"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/orage.png",
+        "cat":"art"
+    },
+    {
+        "id":30,
+        "question":"Dans quel film peut-on trouver la ville d'Agrabah",
+        "answer":"Aladdin",
+        "miss": [
+            "Dune",
+            "Star Wars",
+            "Mad Max"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/ville_desert.png",
+        "cat":"film"
+    },
+    {
+        "id":31,
+        "question":"Qui était Hubert Reeves ?",
+        "answer":"Un astrophysicien",
+        "miss": [
+            "Un acteur de Superman",
+            "Un homme politique",
+            "Un chanteur de rock"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/hubert_reeves.png",
+        "cat":"science"
+    },
+    {
+        "id":32,
+        "question":"Laquelle de ces îles est située la plus au sud ?",
+        "answer":"Trinité",
+        "miss": [
+            "Cuba",
+            "Jamaïque",
+            "Curaçao"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/caraibes.png",
+        "cat":"geo"
+    },
+    {
+        "id":33,
+        "question":"Qu'est-ce que Calibri ?",
+        "answer":"Une police",
+        "miss": [
+            "Un oiseau",
+            "Une secte",
+            "Une ville",
+            "Un gâteau",
+            "Une langue"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/colibri.png",
+        "cat":"gi_trick"
+    },
+    {
+        "id":34,
+        "question":"Parmi les objets célestes suivants, lequel est le plus éloigné du Soleil ?",
+        "answer":"Saturne",
+        "miss": [
+            "Mercure",
+            "La Lune",
+            "Cérès"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/systeme_solaire.png",
+        "cat":"science"
+    },
+    {
+        "id":35,
+        "question":"Laquelle de ces orthographes est fausse ?",
+        "answer":"Charette",
+        "miss": [
+            "Cimeterre",
+            "Saynète",
+            "Prérogative",
+            "Ornithorynque"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/dico.png",
+        "cat":"lang"
+    },
+    {
+        "id":36,
+        "question":"Lequel de ces mots désigne un fromage ?",
+        "answer":"Etorki",
+        "miss": [
+            "Kalamata",
+            "Vladimir",
+            "Taproba"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/etorki.png",
+        "cat":"gi_trick"
+    },
+    {
+        "id":37,
+        "question":"De quelle autre couleur le vermillon s'approche-t-il le plus ?",
+        "answer":"Rouge",
+        "miss": [
+            "Jaune",
+            "Violet",
+            "Gris",
+            "Bleu",
+            "Rose",
+            "Marron",
+            "Gris"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/color_wheel.png",
+        "cat":"art"
+    },
+    {
+        "id":38,
+        "question":"Sur une manette de Playstation, quel symbole n'existe pas ?",
+        "answer":"Étoile",
+        "miss": [
+            "Carré",
+            "Triangle",
+            "Rond"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/playstation.png",
+        "cat":"jeux"
+    },
+    {
+        "id":39,
+        "question":"Combien de temps met la lumière pour voyager du Soleil jusqu'à la Terre ?",
+        "answer":"8min",
+        "miss": [
+            "11 jours",
+            "5sec",
+            "3h47min"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/systeme_solaire.png",
+        "cat":"science"
+    },
+    {
+        "id":40,
+        "question":"Combien y a-t-il de trous dans une boule de bowling standard ?",
+        "answer":"3",
+        "miss": [
+            "2",
+            "4",
+            "5"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/bowling.png",
+        "cat":"sport"
+    },
+    {
+        "id":41,
+        "question":"En quelle année Mahatma Gandhi est-il mort ?",
+        "answer":"1948",
+        "miss": [
+            "1961",
+            "1975",
+            "1997"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/gandhi.png",
+        "cat":"hist"
+    },
+    {
+        "id":42,
+        "question":"En quelle année Toronto a-t-elle accueilli les JO ?",
+        "answer":"Jamais",
+        "miss": [
+            "1996",
+            "2002",
+            "1952"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/toronto.png",
+        "cat":"sport"
+    },
+    {
+        "id":43,
+        "question":"Lequel de ces grades de l'Armée de terre française est le plus élevé ?",
+        "answer":"Colone",
+        "miss": [
+            "Adjudant",
+            "Capitaine",
+            "Sergent"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/militaire.png",
+        "cat":"gi_trick"
+    },
+    {
+        "id":44,
+        "question":"Quel sont les noms des lunes de Mars ?",
+        "answer":"Phobos & Deimos",
+        "miss": [
+            "Phobos & Kratos",
+            "Legos & Deimos",
+            "Kratos & Legos"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/systeme_solaire.png",
+        "cat":"science"
+    },
+    {
+        "id":45,
+        "question":"Quel âge a Juliette dans « Roméo et Juliette » ?",
+        "answer":"13 ans",
+        "miss": [
+            "17 ans",
+            "21 ans",
+            "31 ans"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/romeo_juliette.png",
+        "cat":"art"
     }
 ]
