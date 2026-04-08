@@ -119,7 +119,8 @@ corner_radius_bottom_left = 15
 [node name="quizz_time" instance=ExtResource("1_bn47r")]
 script = ExtResource("2_vs8r3")
 json_path = "res://Minigames/QuizzTime/Assets/questions.json"
-score_max = 10
+score_max = 8
+jeu = 20.0
 
 [node name="UI" type="Control" parent="." index="0"]
 layout_mode = 3
@@ -154,39 +155,7 @@ scale = Vector2(0.95166856, 0.96397185)
 color = Color(0.25490198, 0.78039217, 0.78431374, 0.2)
 polygon = PackedVector2Array(1334.4451, -23.430264, 1334.4451, 1038.8414, 660.8912, 1038.8414, 587, 877, 736, 626, 539, 443, 765, 281, 582.0822, -23.430264)
 
-[node name="Score1" type="Label" parent="UI" index="2"]
-z_index = 10
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 0
-offset_left = 50.0
-offset_top = 52.0
-offset_right = 150.0
-offset_bottom = 107.0
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 40
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Score2" type="Label" parent="UI" index="3"]
-z_index = 10
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -150.0
-offset_top = 52.0
-offset_right = -50.0
-offset_bottom = 107.0
-grow_horizontal = 0
-size_flags_horizontal = 0
-theme_override_font_sizes/font_size = 40
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="QuestionLabel" type="Label" parent="UI" index="4"]
+[node name="QuestionLabel" type="Label" parent="UI" index="2"]
 z_index = 10
 layout_mode = 1
 anchors_preset = -1
@@ -198,7 +167,7 @@ text = "QUESTION"
 horizontal_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="ScoreBar1" type="TextureProgressBar" parent="UI" index="5"]
+[node name="ScoreBar1" type="TextureProgressBar" parent="UI" index="3"]
 z_index = 10
 layout_mode = 0
 offset_left = 75.0
@@ -210,7 +179,7 @@ texture_under = ExtResource("3_4hxx0")
 texture_over = ExtResource("4_w1aa1")
 texture_progress = ExtResource("5_nyin1")
 
-[node name="ScoreBar2" type="TextureProgressBar" parent="UI" index="6"]
+[node name="ScoreBar2" type="TextureProgressBar" parent="UI" index="4"]
 z_index = 10
 layout_mode = 0
 offset_left = 1233.0
@@ -222,7 +191,7 @@ texture_under = ExtResource("3_4hxx0")
 texture_over = ExtResource("4_w1aa1")
 texture_progress = ExtResource("6_jmhwa")
 
-[node name="PanelContainer" type="Panel" parent="UI" index="7"]
+[node name="PanelContainer" type="Panel" parent="UI" index="5"]
 z_index = 10
 layout_mode = 0
 offset_left = 250.0
@@ -244,7 +213,7 @@ texture = ExtResource("3_epa2d")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="GridContainer" type="GridContainer" parent="UI" index="8"]
+[node name="GridContainer" type="GridContainer" parent="UI" index="6"]
 z_index = 10
 material = SubResource("ShaderMaterial_m5ckr")
 layout_mode = 0
@@ -407,7 +376,7 @@ theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="TimerBar" type="ProgressBar" parent="UI" index="9"]
+[node name="TimerBar" type="ProgressBar" parent="UI" index="7"]
 z_index = 10
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 0
@@ -419,9 +388,10 @@ max_value = 1.0
 value = 1.0
 show_percentage = false
 
-[node name="Cursor9P1" type="NinePatchRect" parent="." index="1"]
+[node name="Cursor9P1" type="NinePatchRect" parent="UI" index="8"]
 visible = false
 z_index = 100
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -438,9 +408,10 @@ patch_margin_bottom = 56
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[node name="Cursor9P2" type="NinePatchRect" parent="." index="2"]
+[node name="Cursor9P2" type="NinePatchRect" parent="UI" index="9"]
 visible = false
 z_index = 100
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -457,9 +428,10 @@ patch_margin_bottom = 56
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[node name="Cursor9BP" type="NinePatchRect" parent="." index="3"]
+[node name="Cursor9BP" type="NinePatchRect" parent="UI" index="10"]
 visible = false
 z_index = 100
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -493,14 +465,14 @@ z_index = 100
 [node name="Transition" parent="Utilities" index="5"]
 z_index = 100
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="5"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
 autoplay = true
 
-[node name="RespondTimer" type="Timer" parent="." index="6"]
+[node name="RespondTimer" type="Timer" parent="." index="3"]
 wait_time = 5.0
 one_shot = true
 
-[node name="RevealTimer" type="Timer" parent="." index="7"]
+[node name="RevealTimer" type="Timer" parent="." index="4"]
 one_shot = true
 
 [connection signal="timeout" from="RespondTimer" to="." method="_on_respond_timer_timeout"]

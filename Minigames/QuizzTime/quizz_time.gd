@@ -16,28 +16,15 @@ var questions : Array = []
 @onready var reveal_timer = $RevealTimer
 @onready var timer_bar = $UI/TimerBar
 
-@onready var scoreboard_p1 = $UI/ScoreBar1
-@onready var scoreboard_p2 = $UI/ScoreBar2
-
-@onready var cursor_p1 = $Cursor9P1
-@onready var cursor_p2 = $Cursor9P2
-@onready var cursor_bp = $Cursor9BP
-
 var shader_gray = ShaderMaterial.new()
-
-const inputs_p1 = ["Bouton HautGauche P1", "Bouton BasGauche P1", "Bouton HautCentre P1", "Bouton BasCentre P1", "Bouton HautDroite P1", "Bouton BasDroite P1"]
-const inputs_p2 = ["Bouton HautGauche P2", "Bouton BasGauche P2", "Bouton HautCentre P2", "Bouton BasCentre P2", "Bouton HautDroite P2", "Bouton BasDroite P2"]
 
 enum GameState { START, RESPOND, REVEAL }
 var state : GameState
 var current_question : Dictionary
 var n_answer : int
 var answer_right : int
-var answer_p1 : int
-var answer_p2 : int
-
-var score_p1 : int = 0
-var score_p2 : int = 0
+var p1 = QuizTimePlayer.new()
+var p2 = QuizTimePlayer.new()
 
 func load_json() -> void:
 	var file = FileAccess.open(json_path, FileAccess.READ)
@@ -60,6 +47,8 @@ func load_json() -> void:
 func _ready() -> void:
 	# Appelle la fonciton _ready() de GameUtilities, cette ligne est tres importante
 	super()
+	p1.setup("1", $UI, score_max)
+	p2.setup("2", $UI, score_max)
 
 	question_label.hide()
 	question_image.hide()
@@ -69,8 +58,6 @@ func _ready() -> void:
 		end_game_early.emit()
 	shader_gray.shader = load("res://Minigames/QuizzTime/Assets/grayscale.gdshader")
 
-	scoreboard_p1.max_value = score_max
-	scoreboard_p2.max_value = score_max
 	state = GameState.START
 
 func _process(delta: float) -> void:
@@ -91,22 +78,22 @@ func _process(delta: float) -> void:
 				check_answers()
 			GameState.REVEAL:
 				timer_bar.value = 1 - reveal_timer.time_left / reveal_timer.wait_time
-		if Input.is_action_just_pressed("Joystick Haut P1"):
-			end_game_early.emit()
 
-# Cette fonction sera appelée à la fin d'une partie pour déterminer qui sera le gagnant
-# retourne True si joueur1 as gagné, et retourne False si joueur2 as gagné
 func get_winner() -> bool:
-	return score_p1 > score_p2
+	if p1.score == p2.score:
+		if p1.time_score == p2.time_score:
+			return randf() > .5
+		return p1.time_score > p2.time_score
+	return p1.score > p2.score
 
 func start_new_round() -> void:
 	set_new_question()
 	state = GameState.RESPOND
 	respond_timer.start()
-	answer_p1 = -1
-	answer_p2 = -1
+	p1.answer = -1
+	p2.answer = -1
 	
-	for el in [cursor_p1, cursor_p2, cursor_bp]:
+	for el in [p1.cursor, p2.cursor, p1.cursor_bp]:
 		hide_cursor(el)
 	for i in range(n_answer):
 		answerPanels[i].material = null
@@ -139,47 +126,43 @@ func set_new_question() -> void:
 
 func check_buttons() -> void:
 	for i in range(n_answer):
-		if answer_p1 == -1 and Input.is_action_just_pressed(inputs_p1[i]):
-			answer_p1 = i
-			if answer_p1 == answer_p2:
-				hide_cursor(cursor_p2)
-				show_cursor(cursor_bp, i)
+		if p1.answer == -1 and Input.is_action_just_pressed(p1.inputs[i]):
+			p1.answer = i
+			if p1.answer == p2.answer:
+				hide_cursor(p2.cursor)
+				show_cursor(p2.cursor_bp, i)
 			else:
-				show_cursor(cursor_p1, i)
-		if answer_p2 == -1 and Input.is_action_just_pressed(inputs_p2[i]):
-			answer_p2 = i
-			if answer_p1 == answer_p2:
-				hide_cursor(cursor_p1)
-				show_cursor(cursor_bp, i)
+				show_cursor(p1.cursor, i)
+		if p2.answer == -1 and Input.is_action_just_pressed(p2.inputs[i]):
+			p2.answer = i
+			if p1.answer == p2.answer:
+				hide_cursor(p1.cursor)
+				show_cursor(p1.cursor_bp, i)
 			else:
-				show_cursor(cursor_p2, i)
+				show_cursor(p2.cursor, i)
 
 func check_answers() -> void:
-	if answer_p1 == answer_right and answer_p2 == answer_right:
+	if p1.answer == answer_right and p2.answer == answer_right:
 		print("Too fast! Both answered at the same time")
-		finish_round(3)
-	elif answer_p1 == answer_right:
+		finish_round(null)
+	elif p1.answer == answer_right:
 		print("P1 won the round!")
-		finish_round(1)
-	elif answer_p2 == answer_right:
+		finish_round(p1)
+	elif p2.answer == answer_right:
 		print("P2 won the round!")
-		finish_round(2)
-	elif answer_p1 != -1 and answer_p2 != -1:
+		finish_round(p2)
+	elif p1.answer != -1 and p2.answer != -1:
 		print("Both players lost!")
-		finish_round(0)
+		finish_round(null)
 
-func finish_round(winner: int) -> void:
+func finish_round(winner: QuizTimePlayer) -> void:
 	respond_timer.stop()
-	if winner == 1:
-		score_p1 += 1
-		$UI/AnimationPlayer.play("P1_win")
-	elif winner == 2:
-		score_p2 += 1
-		$UI/AnimationPlayer.play("P2_win")
-	
-	scoreboard_p1.value = score_p1
-	scoreboard_p2.value = score_p2
-	
+	if winner != null:
+		winner.score += 1
+		winner.time_score += respond_timer.time_left
+		$UI/AnimationPlayer.play("P" + winner.i + "_win")
+		winner.scorebar.value = winner.score
+
 	state = GameState.REVEAL
 	for i in range(n_answer):
 		if i != answer_right:
@@ -188,11 +171,10 @@ func finish_round(winner: int) -> void:
 	reveal_timer.start()
 
 func _on_respond_timer_timeout() -> void:
-	finish_round(0)
+	finish_round(null)
 
 func _on_reveal_timer_timeout() -> void:
-	#TODO end of game if enough points -> emit end_game
-	if questions.size() < 1 or score_p1 >= score_max or score_p2 >= score_max:
+	if questions.size() < 1 or p1.score >= score_max or p2.score >= score_max or timer_jeu.time_left < 5:
 		end_game.emit(get_winner())
 	else:
 		start_new_round()
@@ -209,5 +191,5 @@ func show_cursor(cursor: NinePatchRect, pos: int) -> void:
 	cursor.position = Vector2(-6, -6)
 	cursor.size = Vector2(282 if n_answer == 6 else 420, 112)
 
-
 #TODO faire un reveal pour les quel est ce pokémon
+#TODO pool de 
