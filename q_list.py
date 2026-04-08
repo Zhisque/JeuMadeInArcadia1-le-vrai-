@@ -19,7 +19,7 @@ def load_json_file(file_path):
         print(f"Unexpected error: {e}")
     return None
 
-list = load_json_file("Minigames\QuizzTime\Assets\questions.json")
+list = load_json_file("Minigames/QuizzTime/Assets/questions.json")
 cats = {"geo":0, "hist":0, "lang":0, "film":0, "nature":0, "gi_trick":0, "science":0, "sport":0, "art":0, "jeux":0}
 
 for elem in list:

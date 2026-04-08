@@ -533,7 +533,7 @@
     {
         "id":43,
         "question":"Lequel de ces grades de l'Armée de terre française est le plus élevé ?",
-        "answer":"Colone",
+        "answer":"Colonel",
         "miss": [
             "Adjudant",
             "Capitaine",
@@ -564,6 +564,140 @@
             "31 ans"
         ],
         "picture":"res://Minigames/QuizzTime/Assets/pictures/romeo_juliette.png",
+        "cat":"art"
+    },
+    {
+        "id":46,
+        "question":"Qui a peint cette œuvre ?",
+        "answer":"Vincent van Gogh",
+        "miss": [
+            "Paul Cézanne",
+            "Paul Gaugin",
+            "Henri Rousseau"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/starry_night.png",
+        "cat":"art"
+    },
+    {
+        "id":47,
+        "question":"Qui a peint cette œuvre ?",
+        "answer":"Johannes Vermeer",
+        "miss": [
+            "Vincent van Gogh",
+            "Gustav Klimt",
+            "Jan van Goyen"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/la_laitiere.png",
+        "cat":"art"
+    },
+    {
+        "id":48,
+        "question":"Quel est le nom de cette œuvre ?",
+        "answer":"Le Grand Masturbateur",
+        "miss": [
+            "Métamorphose de Narcisse",
+            "Autoportrait",
+            "Corpus Hypercubus"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/dali_great_masturbator.png",
+        "cat":"art"
+    },
+    {
+        "id":49,
+        "question":"Quel est le nom de cette sculpture ?",
+        "answer":"David",
+        "miss": [
+            "Jean",
+            "Pierre",
+            "Étienne",
+            "Marc-Antoine",
+            "César"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/david.png",
+        "cat":"art"
+    },
+    {
+        "id":50,
+        "question":"Qui a sculpté cette œuvre ?",
+        "answer":"Michel-Ange",
+        "miss": [
+            "Leonard de Vinci",
+            "Raphaël",
+            "Donatello"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/david.png",
+        "cat":"art"
+    },
+    {
+        "id":51,
+        "question":"Où est peinte cette œuvre de Banksy ?",
+        "answer":"Londres",
+        "miss": [
+            "Paris",
+            "New York",
+            "Rioz"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/banksy.png",
+        "cat":"art"
+    },
+    {
+        "id":52,
+        "question":"Qui a peint cette œuvre ?",
+        "answer":"Gustav Klimt",
+        "miss": [
+            "Louis Majorelle",
+            "Hector Guimard",
+            "Paul Hankar"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/baiser_klimt.png",
+        "cat":"art"
+    },
+    {
+        "id":53,
+        "question":"En quelle année a été peinte cette œuvre ?",
+        "answer":"1893",
+        "miss": [
+            "1963",
+            "1743",
+            "1742"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/cri_munch.png",
+        "cat":"art"
+    },
+    {
+        "id":54,
+        "question":"Qui a peint cette œuvre ?",
+        "answer":"Claude Monet",
+        "miss": [
+            "Édouard Manet",
+            "Claude Manet",
+            "Édouard Monet"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/nympheas_monet.png",
+        "cat":"art"
+    },
+    {
+        "id":55,
+        "question":"Qui est peint dans cette œuvre ?",
+        "answer":"Marilyn Monroe",
+        "miss": [
+            "Andy Warhol",
+            "Camil Maillard",
+            "Pierre-Auguste Renoir"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/monroe_wharhol.png",
+        "cat":"art"
+    },
+    {
+        "id":55,
+        "question":"Quel standard de jazz a été créé en 2008 ?",
+        "answer":"Strasbourg Saint-Denis",
+        "miss": [
+            "TODO",
+            "TODO",
+            "TODO"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/jazz.png",
         "cat":"art"
     }
 ]
