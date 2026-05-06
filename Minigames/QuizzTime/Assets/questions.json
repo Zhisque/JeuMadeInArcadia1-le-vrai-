@@ -689,15 +689,301 @@
         "cat":"art"
     },
     {
-        "id":55,
+        "id":56,
+        "question":"Quel est ce type de biome ?",
+        "answer":"Toundra",
+        "miss": [
+            "Taïga",
+            "Steppe",
+            "Forêt de montagne"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/toundra.png",
+        "cat":"nature"
+    },
+    {
+        "id":57,
+        "question":"Quel est ce type de biome ?",
+        "answer":"Taïga",
+        "miss": [
+            "Toundra",
+            "Steppe",
+            "Forêt de montagne"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/taiga.png",
+        "cat":"nature"
+    },
+    {
+        "id":58,
+        "question":"Quel est cet animal ?",
+        "answer":"Un chat",
+        "miss": [
+            "Un lion",
+            "Un tigre",
+            "Un léopard",
+            "Un alligator",
+            "Un castor"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/chat.png",
+        "cat":"nature"
+    },
+    {
+        "id":59,
+        "question":"Quel est cet animal ?",
+        "answer":"Un écureuil",
+        "miss": [
+            "Un pivert",
+            "Une araignée",
+            "Un crocodile",
+            "Un rat"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/ecureuil.png",
+        "cat":"nature"
+    },
+    {
+        "id":60,
+        "question":"Quel est cet animal ?",
+        "answer":"Un pivert",
+        "miss": [
+            "Un rougegorge",
+            "Une mésange bleue",
+            "Une bergeonette grise"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/pivert.png",
+        "cat":"nature"
+    },
+    {
+        "id":61,
+        "question":"Quel est le nom latin de cet animal ?",
+        "answer":"Picus viridis",
+        "miss": [
+            "Pivert",
+            "Pic vert",
+            "Pictus vertum"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/pivert.png",
+        "cat":"nature"
+    },
+    {
+        "id":62,
+        "question":"Quel est le nom latin de cet animal ?",
+        "answer":"Canis familiaris",
+        "miss": [
+            "Canis lupus",
+            "Felis catus",
+            "Canus caninis"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/chien.png",
+        "cat":"nature"
+    },
+    {
+        "id":63,
+        "question":"Quel est le nom latin de cet animal ?",
+        "answer":"Alca torda",
+        "miss": [
+            "Pinguinus impennis",
+            "Fratercula arctica",
+            "Aethia pusilla"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/pingouin.png",
+        "cat":"nature"
+    },
+    {
+        "id":64,
+        "question":"À quel genre appartient cet animal ?",
+        "answer":"Vulpes",
+        "miss": [
+            "Canis",
+            "Lycalopex",
+            "Lycaon",
+            "Cuon"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/fennec.png",
+        "cat":"nature"
+    },
+    {
+        "id":65,
+        "question":"À quel genre appartient cet animal ?",
+        "answer":"Felis",
+        "miss": [
+            "Catus",
+            "Carnivora",
+            "Mammalia"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/chat.png",
+        "cat":"nature"
+    },
+    {
+        "id":66,
+        "question":"À quel classe appartient cet animal ?",
+        "answer":"Aves",
+        "miss": [
+            "Gallus",
+            "Pisces",
+            "Mammalia"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/coq.png",
+        "cat":"nature"
+    },
+    {
+        "id":67,
+        "question":"À quel arbre appartient ce fruit ?",
+        "answer":"Un cognassier",
+        "miss": [
+            "Un pommier",
+            "Un poirier",
+            "Un pleutrier"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/coing.png",
+        "cat":"nature"
+    },
+    {
+        "id":68,
+        "question":"Quel est le nom de ce fruit ?",
+        "answer":"Ananas",
+        "miss": [
+            "Cerise",
+            "Pomme",
+            "Poire",
+            "Noix",
+            "Goyave"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/ananas.png",
+        "cat":"nature"
+    },
+    {
+        "id":69,
+        "question":"Quel est le nom de ce fruit ?",
+        "answer":"Banane",
+        "miss": [
+            "Citron",
+            "Coing",
+            "Durian",
+            "Mangue",
+            "Mandarine"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/banane.png",
+        "cat":"nature"
+    },
+    {
+        "id":70,
+        "question":"À quel arbre appartient cette feuille ?",
+        "answer":"Un érable",
+        "miss": [
+            "Un platane",
+            "Un tilleul",
+            "Un pommier",
+            "Un sapin"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/feuille_erable.png",
+        "cat":"nature"
+    },
+    {
+        "id":71,
+        "question":"À quel arbre appartient cette feuille ?",
+        "answer":"Un chêne",
+        "miss": [
+            "Un tilleul",
+            "Un cerisier",
+            "Un séquoia"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/feuille_erable.png",
+        "cat":"nature"
+    },
+    {
+        "id":72,
         "question":"Quel standard de jazz a été créé en 2008 ?",
         "answer":"Strasbourg Saint-Denis",
         "miss": [
-            "TODO",
-            "TODO",
-            "TODO"
+            "Take the A-Train",
+            "Mr PC",
+            "So What",
+            "St Thomas"
         ],
         "picture":"res://Minigames/QuizzTime/Assets/pictures/jazz.png",
         "cat":"art"
+    },
+    {
+        "id":73,
+        "question":"Quel est cet animal ?",
+        "answer":"Un pangolin",
+        "miss": [
+            "Un paresseux",
+            "Un tapir",
+            "Un gendarme"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/pangolin.png",
+        "cat":"nature"
+    },
+    {
+        "id":74,
+        "question":"De quel jeu vient ce personnage ?",
+        "answer":"Valorant",
+        "miss": [
+            "League of Legends",
+            "Genshin Impact",
+            "Overwatch"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/killjoy.png",
+        "cat":"jeux"
+    },
+    {
+        "id":75,
+        "question":"Par quel studio a été développé Star Citizen ?",
+        "answer":"Cloud Imperium Games",
+        "miss": [
+            "Riot Games",
+            "Ubisoft",
+            "Mega Crit"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/star_citizen.png",
+        "cat":"jeux"
+    },
+    {
+        "id":76,
+        "question":"Quel jeu vidéo a fait le plus de ventes au monde ?",
+        "answer":"Minecraft",
+        "miss": [
+            "Roblox",
+            "Mario Kart 8 Deluxe",
+            "GTA V"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/console_jeu.png",
+        "cat":"jeux"
+    },
+    {
+        "id":77,
+        "question":"Quelle console de jeux Nintendo est sortie en 2006 ?",
+        "answer":"La Wii",
+        "miss": [
+            "La Wii U",
+            "La GameCube",
+            "La PlayStation 3"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/nintendo.png",
+        "cat":"jeux"
+    },
+    {
+        "id":78,
+        "question":"Quel est le titre du troisième film de la saga Star Wars (dans l'ordre de sortie) ?",
+        "answer":"Le Retour du Jedi",
+        "miss": [
+            "La Menace Fantôme",
+            "La Revanche des Siths",
+            "Le Réveil de la Force"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/star_wars_vi.png",
+        "cat":"film"
+    },
+    {
+        "id":79,
+        "question":"Dans Interstellar, quel est le nom du personnage principal  ?",
+        "answer":"Joseph Cooper",
+        "miss": [
+            "James Cameron",
+            "Jonathan Smith",
+            "Jared Bones"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/interstellar.png",
+        "cat":"film"
     }
 ]

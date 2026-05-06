@@ -1,4 +1,5 @@
 import json
+import os
 
 def load_json_file(file_path):
     """
@@ -19,11 +20,23 @@ def load_json_file(file_path):
         print(f"Unexpected error: {e}")
     return None
 
-list = load_json_file("Minigames/QuizzTime/Assets/questions.json")
+path = "Minigames/QuizzTime/Assets/"
+
+pictures = os.listdir(path + "pictures")
+
+list = load_json_file(path + "questions.json")
 cats = {"geo":0, "hist":0, "lang":0, "film":0, "nature":0, "gi_trick":0, "science":0, "sport":0, "art":0, "jeux":0}
+
+print("Missing images :")
 
 for elem in list:
     cats[elem["cat"]] += 1
+    link = elem["picture"]
+    picture = link[link.rfind('/')+1:]
+    if picture not in pictures:
+        print(picture)
+
+print()
 
 for cat in cats:
     print(cat, "\t:", cats[cat])
