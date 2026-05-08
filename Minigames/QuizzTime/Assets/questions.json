@@ -296,7 +296,7 @@
     },
     {
         "id":24,
-        "question":"Lequel de ces animaux du zodiaque chinois n'existe pas?",
+        "question":"Lequel de ces animaux du zodiaque chinois n'existe pas ?",
         "answer":"Le dragon",
         "miss": [
             "Le lapin",
@@ -369,7 +369,7 @@
     },
     {
         "id":30,
-        "question":"Dans quel film peut-on trouver la ville d'Agrabah",
+        "question":"Dans quel film peut-on trouver la ville d'Agrabah ?",
         "answer":"Aladdin",
         "miss": [
             "Dune",
@@ -985,5 +985,138 @@
         ],
         "picture":"res://Minigames/QuizzTime/Assets/pictures/interstellar.png",
         "cat":"film"
+    },
+    {
+        "id":80,
+        "question":"Quelle est la capitale des États-Unis ?",
+        "answer":"Washington DC",
+        "miss": [
+            "New York City",
+            "Los Angeles",
+            "Boston"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/usa.png",
+        "cat":"geo"
+    },
+    {
+        "id":81,
+        "question":"Quelle est la capitale du Pakistan ?",
+        "answer":"Islamabad",
+        "miss": [
+            "Lahore",
+            "Karachi",
+            "Téhéran"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/pakistan.png",
+        "cat":"geo"
+    },
+    {
+        "id":82,
+        "question":"Quelle est la capitale du Nicaragua ?",
+        "answer":"Managua",
+        "miss": [
+            "Tegucigalpa",
+            "Nicaragua City",
+            "San José"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/nicaragua.png",
+        "cat":"geo"
+    },
+    {
+        "id":83,
+        "question":"Quel pays est décrit par cette forme ?",
+        "answer":"Le Canada",
+        "miss": [
+            "L'Australie",
+            "Singapour",
+            "La Norvège",
+            "L'Inde"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/canada.png",
+        "cat":"geo"
+    },
+    {
+        "id":84,
+        "question":"Quel pays est décrit par cette forme ?",
+        "answer":"La Roumanie",
+        "miss": [
+            "Le Mali",
+            "Andorre",
+            "Le Zimbabwe"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/roumanie.png",
+        "cat":"geo"
+    },
+    {
+        "id":85,
+        "question":"Quel archipel est décrit par cette forme ?",
+        "answer":"Les Baléares",
+        "miss": [
+            "Les Açores",
+            "Les Canaries",
+            "Les Cyclades"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/baleares.png",
+        "cat":"geo"
+    },
+    {
+        "id":86,
+        "question":"Dans quelle ville a été imprimée la première carte faisant mention du continent américain ?",
+        "answer":"St-Dié-des-Vosges",
+        "miss": [
+            "St-Jean-de-Luz",
+            "Ste-Marie-aux-Mines",
+            "St-François-d'Assise"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/carte_st_die.png",
+        "cat":"geo"
+    },
+    {
+        "id":87,
+        "question":"Quelle est la deuxième plus grande île du monde ?",
+        "answer":"La Nouvelle-Guinée",
+        "miss": [
+            "Borneo",
+            "Cuba",
+            "Le Groenland"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/plage.png",
+        "cat":"geo"
+    },
+    {
+        "id":88,
+        "question":"Quel est le plus long fleuve d'Asie ?",
+        "answer":"Le Yangtsé",
+        "miss": [
+            "Le Ienisseï",
+            "Le fleuve Jaune",
+            "Le Ganges"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/fleuve.png",
+        "cat":"geo"
+    },
+    {
+        "id":89,
+        "question":"Quelle ville se trouve à l'embouchure du Yangtsé ?",
+        "answer":"Shanghaï",
+        "miss": [
+            "Beijing",
+            "Guangzhou",
+            "Xi'an"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/shanghai.png",
+        "cat":"geo"
+    },
+    {
+        "id":90,
+        "question":"Quelle ville se trouve à l'embouchure du Yangtsé ?",
+        "answer":"上海",
+        "miss": [
+            "北京",
+            "广州",
+            "西安"
+        ],
+        "picture":"res://Minigames/QuizzTime/Assets/pictures/shanghai.png",
+        "cat":"lang"
     }
 ]
